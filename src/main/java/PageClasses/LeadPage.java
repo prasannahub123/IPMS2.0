@@ -27,7 +27,8 @@ public class LeadPage {
     final By SubmitButton = By.xpath("//button[text()='Submit']");
     final By AccountList = By.xpath("//li[text()='Account List']");
     final By CreateAccount = By.xpath("//button[text()='Create Account']");
-    final By ChooseCutomerName = By.xpath("(//div[@id='react-select-2-option-%d']");
+    final By ChooseCutomerName = By.xpath("//div[contains(@class, 'css-1jqq78o-placeholder')]");
+    final String ChooseCustomerNameOptions = ("//div[@id='react-select-2-option-%d']");
     final By AccountName = By.xpath("//input[@type='text' and @name='name']");
     final By EnterPhoneNo = By.xpath("//input[@type='number' and @name='phone']");
 
@@ -91,11 +92,11 @@ public class LeadPage {
         driver.findElement(CreateAccount).click();
     }
     @Step("Selecting desired Customer name")
-    public void SelectingCustomerName(int OptionNo) throws InterruptedException {
+    public void SelectingCustomerName(int CustNo) throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOfElementLocated(ChooseCutomerName));
         driver.findElement(ChooseCutomerName).click();
         Thread.sleep(5000);
-        String formattedXPath = String.format(String.valueOf(ChooseCutomerName), OptionNo);
+        String formattedXPath = String.format(ChooseCustomerNameOptions, CustNo);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(formattedXPath)));
         driver.findElement(By.xpath(formattedXPath)).click();
     }
@@ -105,5 +106,11 @@ public class LeadPage {
         driver.findElement(AccountName).click();
         driver.switchTo().activeElement().sendKeys(Accountname);
 
+    }
+    @Step ("Entering desired phone Number")
+    public void EnteringPhoneNumber(String PhoneNumber){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(EnterPhoneNo));
+        driver.findElement(EnterPhoneNo).click();
+        driver.switchTo().activeElement().sendKeys(PhoneNumber);
     }
     }

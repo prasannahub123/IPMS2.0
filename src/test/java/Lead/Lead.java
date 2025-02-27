@@ -33,14 +33,15 @@ public class Lead extends BaseClass {
         lead.ClickOnMasterData();
         lead.ClickOnCustomerList();
         lead.ClickOnCreateCustomer();
-        lead.ClickOnCustomerNameField("Jindal");
-        lead.ClickonEmailField("jindal02@gmail.com");
-        lead.ClickOnPhoneNumberField("9090909092");
-        lead.ClickOnAddressField("BBSR, Odisha");
+        lead.ClickOnCustomerNameField("Jindall");
+        lead.ClickonEmailField("jindal03@gmail.com");
+        lead.ClickOnPhoneNumberField("9090909093");
+        lead.ClickOnAddressField("BBSR Unit1, Odisha");
         lead.ClickingOnSubmitButton();
         lead.ClickingOnAccountList();
         lead.SelectingCustomerName(1);
-        lead.EnteringAccountName("Rajdeep");
+        lead.EnteringAccountName("Rajdep");
+        lead.EnteringPhoneNumber("9348544761");
 
     }
 
