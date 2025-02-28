@@ -42,6 +42,9 @@ public class Lead extends BaseClass {
         lead.SelectingCustomerName(1);
         lead.EnteringAccountName("Rajdep");
         lead.EnteringPhoneNumber("9348544761");
+        lead.EnteringCustomerEmail("exampletest001@gmail.com");
+        lead.EnteringAddressField("BBSR Unit1, ODISHA");
+        lead.ClickingSubmitButton();
 
     }
 

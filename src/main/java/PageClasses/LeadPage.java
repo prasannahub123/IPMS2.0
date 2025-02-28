@@ -31,6 +31,9 @@ public class LeadPage {
     final String ChooseCustomerNameOptions = ("//div[@id='react-select-2-option-%d']");
     final By AccountName = By.xpath("//input[@type='text' and @name='name']");
     final By EnterPhoneNo = By.xpath("//input[@type='number' and @name='phone']");
+    final By  EnterEmail = By.xpath("//input[@type='email' and @name='email]");
+    final By EnterAddress = By.xpath("//textarea[@name='address']");
+    final By ClickSubmitButton = By.xpath("//button[text()='Submit']");
 
 
 
@@ -112,5 +115,22 @@ public class LeadPage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(EnterPhoneNo));
         driver.findElement(EnterPhoneNo).click();
         driver.switchTo().activeElement().sendKeys(PhoneNumber);
+    }
+    @Step ("Entering desired Email")
+    public void EnteringCustomerEmail(String CustEmail){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(EnterEmail));
+        driver.findElement(EnterEmail).click();
+        driver.switchTo().activeElement().sendKeys(CustEmail);
+    }
+    @Step("Entering Desired Address")
+    public void EnteringAddressField(String CustAddress){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(EnterAddress));
+        driver.findElement(EnterAddress).click();
+        driver.switchTo().activeElement().sendKeys(CustAddress);
+    }
+    @Step("Clicking Submit Button")
+    public void ClickingSubmitButton(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(ClickSubmitButton));
+        driver.findElement(ClickSubmitButton).click();
     }
     }
